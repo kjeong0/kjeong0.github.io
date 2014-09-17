@@ -20,10 +20,14 @@
       Stretches:<input type="text"><br/>
       Walking:<input type="text"><br/>
       <br/>
-      <button onclick="document.getElementById('1').style='visibility:hidden';document.getElementById('2').style='visibility:visible';">Calculate Health and Fitness Rating</button>
+      <button onclick="document.getElementById('1').style='visibility:hidden';
+      document.getElementById('2').style='width:360px;text-align:right;visibility:visible';
+      ">Calculate Health and Fitness Rating</button>
       </form>
-      
     </div>
-    
+    <div id="2" style="visibility=hidden">
+      <img src="http://i.imgur.com/R45THd0.gif" style="width:100px;height:100px"/><br/>
+      <div id="3">Calculating fitness values...</div>
+      </div>
   </body>
 </html>
