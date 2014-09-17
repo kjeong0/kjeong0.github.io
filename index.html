@@ -5,6 +5,7 @@
   </head>
 
   <body>
+  <div style="width:100%;text-align:center">
     <div id="1" style="width:360px;text-align:right">
       <form>
       <h2>Demographics</h2>
@@ -22,14 +23,21 @@
       <br/>
       <button onclick="document.getElementById('1').innerHTML='';
       document.getElementById('2').style.visibility='visible';
-      
-      return false;
+      setTimeout(function(){document.getElementById('3').innerHTML='Calculating health values...';}, 3000);
+      setTimeout(function(){document.getElementById('3').innerHTML='Computing final score...';}, 4000);
+      setTimeout(function(){document.getElementById('4').style.visibility='visible';document.getElementById('2').innerHTML='';}, 7000);
+      return false;0
       ">Calculate Health and Fitness Rating</button>
       </form>
     </div>
     <div id="2" style="visibility:hidden">
       <img src="http://i.imgur.com/R45THd0.gif" style="width:100px;height:100px"/><br/>
       <div id="3">Calculating fitness values...</div>
+      </div>
+      <div id = "4" style="visibility:hidden">
+        <h1>Your health Score:</h1><br/>
+        <h3>'Aight</h3>
+      </div>
       </div>
   </body>
 </html>
