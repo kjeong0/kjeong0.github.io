@@ -1,43 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <title>hello phaser!</title>
+        <script src="phaser.min.js"></script>
+    </head>
+    <body>
 
-  <body>
-  <div style="width:100%;text-align:center">
-    <div id="1" style="width:50%;text-align:right">
-      <form>
-      <h2>Demographics</h2>
-      Age:<input type="text"><br/>
-      Height(cm):<input type="text"><br/>
-      Weight(kg):<input type="text"><br/>
-      # daily meals:<input type="text"><br/>
-      
-      <h2>Exercise</h2>
-      <h4>Weekly hours doing</h4>
-      Cardio:<input type="text"><br/>
-      Core:<input type="text"><br/>
-      Stretches:<input type="text"><br/>
-      Walking:<input type="text"><br/>
-      <br/>
-      <button onclick="document.getElementById('1').innerHTML='';
-      document.getElementById('2').style.visibility='visible';
-      setTimeout(function(){document.getElementById('3').innerHTML='Calculating health values...';}, 5000);
-      setTimeout(function(){document.getElementById('3').innerHTML='Computing final score...';}, 7000);
-      setTimeout(function(){document.getElementById('4').style.visibility='visible';document.getElementById('2').innerHTML='';}, 11000);
-      return false;0
-      ">Calculate Health and Fitness Rating</button>
-      </form>
-    </div>
-    <div id="2" style="visibility:hidden">
-      <img src="http://i.imgur.com/R45THd0.gif" style="width:100px;height:100px"/><br/>
-      <div id="3">Calculating fitness values...</div>
-      </div>
-      <div id = "4" style="visibility:hidden">
-        <h1>Your final health score:</h1>
-        <h1>'Aight</h1>
-      </div>
-      </div>
-  </body>
+    <script type="text/javascript">
+
+    window.onload = function() {
+
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create });
+
+        function preload () {
+
+            game.load.image('logo', 'phaser.png');
+
+        }
+
+        function create () {
+
+            var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
+            logo.anchor.setTo(0.5, 0.5);
+
+        }
+
+    };
+
+    </script>
+
+    </body>
 </html>
