@@ -11,10 +11,12 @@
 
     window.onload = function() {
 
-        var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create });
-		var platforms;
+		var game;
 		
         function preload () {
+		    game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create });
+			var platforms;
+
 			game.load.image('sky', 'images/sky.png');
 			game.load.image('ground', 'images/platform.png');
         }
