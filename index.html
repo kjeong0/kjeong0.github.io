@@ -154,13 +154,13 @@ function update() {
     }
 
 	counterText.text = 'Counter: ' + counter;
-	if (counter > 0 ) {
+	if (counter > 0 && !end ) {
 		counter --;
 	}
 	if (starCount == 0 && !end){
 		end = true;
 		game.add.sprite(300,100,'TACO');
-		game.add.text(300,500, 'YOU WIN MAX!', { fontSize: '70px', fill: '#000' });
+		game.add.text(300,500, 'YOU WIN MAX!\nHigh score: '+Math.floor(Math.random()*3000), { fontSize: '70px', fill: '#000' });
 	}
 }
 
