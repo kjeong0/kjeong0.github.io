@@ -22,7 +22,8 @@ function preload() {
     game.load.image('ground', 'images/platform.png');
     game.load.image('star', 'images/star.png');
     game.load.spritesheet('dude', 'images/dude.png', 32, 48);
-
+	game.load.image('TACO', 'images/tacobell.png');
+	
 }
 
 var score = 0;
@@ -31,6 +32,8 @@ var counter = 300;
 var player;
 var platforms;
 var cursors;
+
+var starCount = 12;
 
 var stars;
 var scoreText;
@@ -153,10 +156,15 @@ function update() {
 	if (counter > 0 ) {
 		counter --;
 	}
+	if (starCount == 0){
+		game.add.create(20, 20, 'dude');
+	}
 }
 
 function collectStar (player, star) {
     
+	starCount--;
+	
     // Removes the star from the screen
     star.kill();
 
