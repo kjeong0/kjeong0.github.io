@@ -161,7 +161,7 @@ function update() {
 	if (starCount == 0 && !end){
 		end = true;
 		game.add.sprite(300,100,'TACO');
-		game.add.text(300,500, 'YOU WIN MAX!\nHigh score: '+Math.floor(Math.random()*3000), { fontSize: '70px', fill: '#000' });
+		game.add.text(300,500, 'YOU WIN SARAH!\nHigh score: '+Math.floor(Math.random()*3000), { fontSize: '70px', fill: '#000' });
 	}
 }
 
@@ -177,7 +177,7 @@ function collectStar (player, star) {
     score += counter;
 	counter = 300;
     scoreText.text = 'Score: ' + score;
-	game.add.audio('meow');
+	game.add.audio('meow').play();
 }
 
 </script>
