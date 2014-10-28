@@ -102,7 +102,7 @@ function create() {
 
     //  The score
     scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
-	counterText = game.add.text(40,16, 'counter: 1000', { fontSize: '32px', fill: '#000' });
+	counterText = game.add.text(90,16, 'counter: 1000', { fontSize: '32px', fill: '#000' });
 
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
@@ -149,8 +149,10 @@ function update() {
         player.body.velocity.y = -550;
     }
 
-	counterText.text = counter;
-	counter --;
+	counterText.text = 'Counter: ' + counter;
+	if (counter > 0 ) {
+		counter --;
+	}
 }
 
 function collectStar (player, star) {
