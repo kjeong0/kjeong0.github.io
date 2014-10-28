@@ -33,6 +33,7 @@ var player;
 var platforms;
 var cursors;
 
+var end = false;
 var starCount = 12;
 
 var stars;
@@ -156,7 +157,8 @@ function update() {
 	if (counter > 0 ) {
 		counter --;
 	}
-	if (starCount == 0){
+	if (starCount == 0 && !end){
+		end = true;
 		game.add.sprite(0,0,'TACO');
 	}
 }
