@@ -23,6 +23,7 @@ function preload() {
     game.load.image('star', 'images/star.png');
     game.load.spritesheet('dude', 'images/dude.png', 32, 48);
 	game.load.image('TACO', 'images/tacobell.png');
+	game.load.audio('meow', 'images/meow.wav');
 	
 }
 
@@ -176,7 +177,7 @@ function collectStar (player, star) {
     score += counter;
 	counter = 300;
     scoreText.text = 'Score: ' + score;
-
+	game.add.audio('meow');
 }
 
 </script>
