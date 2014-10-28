@@ -25,6 +25,9 @@ function preload() {
 
 }
 
+var score = 0;
+var counter = 1000;
+
 var player;
 var platforms;
 var cursors;
@@ -145,6 +148,7 @@ function update() {
         player.body.velocity.y = -550;
     }
 
+	counter --;
 }
 
 function collectStar (player, star) {
@@ -153,7 +157,8 @@ function collectStar (player, star) {
     star.kill();
 
     //  Add and update the score
-    score += 10;
+    score += counter;
+	counter = 1000;
     scoreText.text = 'Score: ' + score;
 
 }
