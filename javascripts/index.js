@@ -7,8 +7,9 @@ $(document).ready(function () {
 			$('#name-center').css('top', '50%');
 		} else if ($(window).scrollTop() > $('#overlay').height()*5){
 			var goUp = $(window).scrollTop() - ($('#overlay').height()*5);
-			console.log($(window).height() - goUp);
 			$('#name-center').css('top', ($(window).height()/2) - goUp);
+		} else {
+			$('#name-center').css('top', '50%');
 		}
 	});
 });
