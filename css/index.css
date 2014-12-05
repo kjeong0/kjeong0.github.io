@@ -43,6 +43,7 @@ html,body{
 	height: 200px;
 	min-width: 400px;
 	width: 60%;
+	max-width: 600px;
 	position: relative;
 }
 #name {
