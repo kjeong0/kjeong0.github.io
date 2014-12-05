@@ -40,8 +40,10 @@ html,body{
 }
 #name-holder {
 	margin: auto;
-	height: 200px;
-	width: 500px;
+	min-height: 200px;
+	height: 40%;
+	min-width: 400px;
+	width: 60%;
 	position: relative;
 }
 #name {
