@@ -10,8 +10,8 @@ $(document).ready(function () {
 			$('#b-r').css('height', (100-opacity * 100)+'%');
 			$('#b-l').css('height', (100-opacity * 100)+'%');
 			$('#name-center').css('top', '50%');
-		} else if ($(window).scrollTop() > $('#overlay-white').height()*2){
-			var goUp = ($(window).scrollTop() - ($('#overlay-white').height()*2)) /2;
+		} else if ($(window).scrollTop() > $('#overlay-white').height()*1.5){
+			var goUp = ($(window).scrollTop() - ($('#overlay-white').height()*1.5))/2;
 			$('#name-center').css('top', ($(window).height()/2) - goUp);
 		}
 	});
