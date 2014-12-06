@@ -104,6 +104,7 @@ html,body{
 	top: 10px;
 	height: 150px;
 	border-bottom: 2px solid rgba(0,0,0,0.5);
+	margin: 0;
 }
 .logo{
 	background-image: url('../images/logo.png');
@@ -115,10 +116,18 @@ html,body{
 .toptext-left{
 	text-align: right;
 	top: 115px;
-	font-size: 18pt;
 }
 .toptext-right{
 	text-align: left;
 	top: 115px;
+}
+.link{
+	color: black !important;
+	text-decoration: none !important;
 	font-size: 18pt;
+}
+.link:hover {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
 }
