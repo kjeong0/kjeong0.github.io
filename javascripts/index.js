@@ -15,6 +15,34 @@ $(document).ready(function () {
 			$('#name-center').css('top', ($(window).height()/2) - goUp);
 		} 
 	});
+	$('.uw').hover(function () {
+		hover('uw', 1);
+	}, function () {
+		hover('uw', 0);
+	});
+	$('.autodesk').hover(function () {
+		hover('autodesk', 1);
+	}, function () {
+		hover('autodesk', 0);
+	});
+	$('.ims').hover(function () {
+		hover('ims', 1);
+	}, function () {
+		hover('ims', 0);
+	});
+	$('.rbc').hover(function () {
+		hover('rbc', 1);
+	}, function () {
+		hover('rbc', 0);
+	});
+	$('.fleetbit').hover(function () {
+		hover('fleetbit', 1);
+	}, function () {
+		hover('fleetbit', 0);
+	});
+	var hover = function (id, opacity) {
+		$('#'+id+'info').css('opacity', opacity);
+	}
 });
 
 function hundredEverything () {

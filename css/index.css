@@ -168,3 +168,22 @@ html,body{
 .fleetbit{
 	background-image: url('../images/fleetbit.png');
 }
+#uwinfo, #autodeskinfo, #imsinfo, #rbcinfo, #fleetbitinfo{
+	opacity: 0;
+	position: absolute;
+}
+.info{
+	width: 80%;
+	margin-top: 25px;
+	margin-left: 10%;
+	height: 400px;
+}
+.title{
+	line-height: 60px;
+	border-bottom: 1px solid black;
+	font-weight: bold;
+	font-size: 24pt;
+}
+.subtitle{
+	font-size: 16pt;
+}
