@@ -132,9 +132,9 @@ html,body{
 	font-size: 22pt;
 }
 .profile{
-	width: 80%;
+	width: auto;
 	height: auto;
-	margin-left: 10%;
+	margin: auto;
 	margin-top: 200px;
 	text-align: center;
 	overflow: hidden;
@@ -173,9 +173,9 @@ html,body{
 	position: absolute;
 }
 .info{
-	width: 80%;
+	width: 750px;
+	margin: auto;
 	margin-top: 25px;
-	margin-left: 10%;
 	height: 400px;
 }
 .title{
