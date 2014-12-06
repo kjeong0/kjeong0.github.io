@@ -11,7 +11,10 @@ html,body{
 	background-image: url('../images/jumbotron.jpg');
 	background-attachment: fixed;
 	background-size: cover;
+<<<<<<< HEAD
 	border-bottom: 2px solid black;
+=======
+>>>>>>> eede8ffaeddd08e0c3f085d6f168fd58c3b2df26
 }
 .banner-cover-white {
 	position: fixed;
@@ -42,7 +45,9 @@ html,body{
 #name-holder {
 	margin: auto;
 	height: 200px;
-	width: 500px;
+	min-width: 450px;
+	width: 60%;
+	max-width: 600px;
 	position: relative;
 }
 #name {
@@ -92,7 +97,6 @@ html,body{
 	z-index: 0;
 	height: 100%;
 	width: 100%;
-	background-color: white;
 }
 .logo-bg{
 	position: relative;
