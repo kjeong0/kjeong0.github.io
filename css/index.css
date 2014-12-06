@@ -11,10 +11,7 @@ html,body{
 	background-image: url('../images/jumbotron.jpg');
 	background-attachment: fixed;
 	background-size: cover;
-<<<<<<< HEAD
 	border-bottom: 2px solid black;
-=======
->>>>>>> eede8ffaeddd08e0c3f085d6f168fd58c3b2df26
 }
 .banner-cover-white {
 	position: fixed;
@@ -133,4 +130,41 @@ html,body{
 }
 .fa{
 	font-size: 22pt;
+}
+.profile{
+	width: 80%;
+	height: auto;
+	margin-left: 10%;
+	margin-top: 200px;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+.circle{
+	position: relative;
+	display: inline-block;
+	border-radius: 50%;
+	background-size: 150px 150px;
+	height: 150px;
+	width: 150px;
+	overflow: hidden;
+	opacity: 0.4;
+}
+.circle:hover{
+	opacity: 1;
+}
+.uw{
+	background-image: url('../images/waterloo.gif');
+}
+.autodesk{
+	background-image: url('../images/autodesk.png');
+}
+.ims{
+	background-image: url('../images/ims.png');
+}
+.rbc{
+	background-image: url('../images/rbc.png');
+}
+.fleetbit{
+	background-image: url('../images/fleetbit.png');
 }

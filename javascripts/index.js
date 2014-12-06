@@ -13,7 +13,7 @@ $(document).ready(function () {
 		} else if ($(window).scrollTop() > $('#overlay-white').height()*1.5){
 			var goUp = ($(window).scrollTop() - ($('#overlay-white').height()*1.5))/2;
 			$('#name-center').css('top', ($(window).height()/2) - goUp);
-		}
+		} 
 	});
 });
 
