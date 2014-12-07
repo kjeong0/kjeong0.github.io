@@ -225,6 +225,7 @@ html,body{
 }
 .time{
 	font-size: 14pt;
+	line-height: 40px;
 }
 .jobdesc{
 	font-size: 13pt;
