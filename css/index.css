@@ -95,6 +95,7 @@ html,body{
 	z-index: 0;
 	height: 200%;
 	width: 100%;
+	overflow: hidden;
 }
 
 .about {
@@ -109,7 +110,7 @@ html,body{
 	height: 150px;
 	border-radius: 50%;
 	background-image: url('../images/profile.jpg');
-	background-size: 125% 100%;
+	background-size: 130% 100%;
 }
 .abouttext {
 	position: absolute;
@@ -130,10 +131,10 @@ html,body{
 
 .logo-bg{
 	position: relative;
+	max-width: 1000px;
 	width: 100%;
 	top: 10px;
-	border-bottom: 2px solid rgba(0,0,0,0.5);
-	margin: 0;
+	margin: auto;
 }
 .logo{
 	background-image: url('../images/logo.png');
@@ -210,6 +211,9 @@ html,body{
 	margin-top: 20px;
 	height: 400px;
 }
+.info div{
+	width: 750px;
+}
 .title{
 	line-height: 60px;
 	border-bottom: 1px solid black;
@@ -217,7 +221,13 @@ html,body{
 	font-size: 24pt;
 }
 .subtitle{
-	font-size: 16pt;
+	font-size: 18pt;
+}
+.time{
+	font-size: 14pt;
+}
+.jobdesc{
+	font-size: 13pt;
 }
 .bg-picture{
 	background-image: url('../images/jumbotron.jpg');
@@ -234,7 +244,6 @@ html,body{
 	background-color: rgba(255,255,255,0.8);
 }
 .bg-picture .center-block{
-	box-shadow: 0 0 100px 100px rgba(255,255,255,0.4);
 	max-width: 1000px;
 	width: 100%;
 	margin: auto;
