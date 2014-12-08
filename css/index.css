@@ -183,9 +183,6 @@ html,body{
 	overflow: hidden;
 	opacity: 0.4;
 }
-.circle:hover{
-	opacity: 1;
-}
 .uw{
 	background-image: url('../images/waterloo.gif');
 }
@@ -252,4 +249,16 @@ html,body{
 	position: relative;
 	background-color: rgba(255,255,255,1);
 	height: 100%;
+}
+.small {
+	position: relative;
+	top: 0;
+	display: inline-block;
+}
+.left{
+	width: 58% !important;
+}
+.right{
+	top: -50px;
+	width: 40% !important;
 }

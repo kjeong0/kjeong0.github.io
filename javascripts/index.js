@@ -1,6 +1,4 @@
 $(document).ready(function () {
-	var clicked = false;
-
 	$(window).scroll(function (evt) {
 		var opacity = 1- $(window).scrollTop()/($('#overlay-white').height());
 		hundredEverything();
@@ -19,63 +17,35 @@ $(document).ready(function () {
 	});
 	$('.uw').hover(function () {
 		hover('uw', 'initial');
-	}, function () {
-		hover('uw', 'none');
-	}).click(function () {
-		click('uw');
 	});
 	$('.autodesk').hover(function () {
 		hover('autodesk', 'initial');
-	}, function () {
-		hover('autodesk', 'none');
-	}).click(function () {
-		click('autodesk');
 	});
 	$('.ims').hover(function () {
 		hover('ims', 'initial');
-	}, function () {
-		hover('ims', 'none');
-	}).click(function () {
-		click('ims');
 	});
 	$('.rbc').hover(function () {
 		hover('rbc', 'initial');
-	}, function () {
-		hover('rbc', 'none');
-	}).click(function () {
-		click('rbc');
 	});
 	$('.fleetbit').hover(function () {
 		hover('fleetbit', 'initial');
-	}, function () {
-		hover('fleetbit', 'none');
-	}).click(function () {
-		click('fleetbit');
 	});
 	var hover = function (id, type) {
-		if(!clicked){
-			$('#'+id+'info').css('display', type);
-		}
+		zeroAll();
+		$('.'+id).css('opacity', 1);
+		$('#'+id+'info').css('display', type);
 	}
 	var zeroAll = function () {
+		$('.uw').css('opacity', 0.4);
+		$('.autodesk').css('opacity', 0.4);
+		$('.ims').css('opacity', 0.4);
+		$('.rbc').css('opacity', 0.4);
+		$('.fleetbit').css('opacity', 0.4);
 		$('#uwinfo').css('display', 'none');
 		$('#autodeskinfo').css('display', 'none');
 		$('#imsinfo').css('display', 'none');
 		$('#rbcinfo').css('display', 'none');
 		$('#fleetbitinfo').css('display', 'none');
-	}
-	var click = function (id) {
-		if (!clicked) {
-			$('#'+id+'info').css('display', 'initial');
-			clicked = true;
-		} else if ($('#'+id+'info').css('display') == 'block' && clicked){
-			zeroAll();
-			clicked = false;
-		} else if ($('#'+id+'info').css('display') == 'none' && clicked){
-			zeroAll();
-			$('#'+id+'info').css('display', 'initial');
-			clicked = true;
-		}
 	}
 });
 
