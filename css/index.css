@@ -202,14 +202,15 @@ html,body{
 	background-image: url('../images/fleetbit.png');
 }
 #uwinfo, #autodeskinfo, #imsinfo, #rbcinfo, #fleetbitinfo{
-	opacity: 0;
+	display: none;
 	position: absolute;
 }
 .info{
 	width: 750px;
 	margin: auto;
 	margin-top: 20px;
-	height: 400px;
+	display: block;
+	height: auto;
 }
 .info div{
 	width: 750px;

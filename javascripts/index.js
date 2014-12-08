@@ -1,4 +1,6 @@
 $(document).ready(function () {
+	var clicked = false;
+
 	$(window).scroll(function (evt) {
 		var opacity = 1- $(window).scrollTop()/($('#overlay-white').height());
 		hundredEverything();
@@ -16,32 +18,64 @@ $(document).ready(function () {
 		} 
 	});
 	$('.uw').hover(function () {
-		hover('uw', 1);
+		hover('uw', 'initial');
 	}, function () {
-		hover('uw', 0);
+		hover('uw', 'none');
+	}).click(function () {
+		click('uw');
 	});
 	$('.autodesk').hover(function () {
-		hover('autodesk', 1);
+		hover('autodesk', 'initial');
 	}, function () {
-		hover('autodesk', 0);
+		hover('autodesk', 'none');
+	}).click(function () {
+		click('autodesk');
 	});
 	$('.ims').hover(function () {
-		hover('ims', 1);
+		hover('ims', 'initial');
 	}, function () {
-		hover('ims', 0);
+		hover('ims', 'none');
+	}).click(function () {
+		click('ims');
 	});
 	$('.rbc').hover(function () {
-		hover('rbc', 1);
+		hover('rbc', 'initial');
 	}, function () {
-		hover('rbc', 0);
+		hover('rbc', 'none');
+	}).click(function () {
+		click('rbc');
 	});
 	$('.fleetbit').hover(function () {
-		hover('fleetbit', 1);
+		hover('fleetbit', 'initial');
 	}, function () {
-		hover('fleetbit', 0);
+		hover('fleetbit', 'none');
+	}).click(function () {
+		click('fleetbit');
 	});
-	var hover = function (id, opacity) {
-		$('#'+id+'info').css('opacity', opacity);
+	var hover = function (id, type) {
+		if(!clicked){
+			$('#'+id+'info').css('display', type);
+		}
+	}
+	var zeroAll = function () {
+		$('#uwinfo').css('display', 'none');
+		$('#autodeskinfo').css('display', 'none');
+		$('#imsinfo').css('display', 'none');
+		$('#rbcinfo').css('display', 'none');
+		$('#fleetbitinfo').css('display', 'none');
+	}
+	var click = function (id) {
+		if (!clicked) {
+			$('#'+id+'info').css('display', 'initial');
+			clicked = true;
+		} else if ($('#'+id+'info').css('display') == 'block' && clicked){
+			zeroAll();
+			clicked = false;
+		} else if ($('#'+id+'info').css('display') == 'none' && clicked){
+			zeroAll();
+			$('#'+id+'info').css('display', 'initial');
+			clicked = true;
+		}
 	}
 });
 
