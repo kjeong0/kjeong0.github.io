@@ -262,3 +262,12 @@ html,body{
 	top: -50px;
 	width: 40% !important;
 }
+.after{
+	width: 750px;
+	height: 100px;
+	margin: auto;
+}
+.after span{
+	font-size: 15pt;
+	color: black;
+}
