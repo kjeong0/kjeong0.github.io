@@ -47,6 +47,18 @@ $(document).ready(function () {
 		$('#rbcinfo').css('display', 'none');
 		$('#fleetbitinfo').css('display', 'none');
 	}
+	
+	var game = new Phaser.Game(750, 600, Phaser.AUTO, 'phaser', { preload: preload, create: create, update: update });
+	function preload () {
+	    game.load.image('spot', 'assets/spot.png');
+	}
+
+	function create () {
+		game.add.sprite(10, 10, 'spot');
+	}
+
+	function update () {
+	}
 });
 
 function hundredEverything () {

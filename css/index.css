@@ -263,11 +263,14 @@ html,body{
 	width: 40% !important;
 }
 .after{
+	z-index: 0;
+	position: relative;
+	display: block;
 	width: 750px;
 	height: 100px;
 	margin: auto;
+	font-size: 30pt;
 }
-.after span{
-	font-size: 15pt;
-	color: black;
+.skills-title{
+	font-size: 22pt;
 }
