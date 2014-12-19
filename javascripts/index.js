@@ -47,30 +47,6 @@ $(document).ready(function () {
 		$('#rbcinfo').css('display', 'none');
 		$('#fleetbitinfo').css('display', 'none');
 	}
-	var grid = new Array(100);
-	for (var i = 0;i<100;i++){
-		grid[i] = false;
-	}
-	var game = new Phaser.Game(749, 598, Phaser.AUTO, 'phaser', { preload: preload, create: create, update: update });
-	function preload () {
-	    game.load.image('spot', 'assets/spot.png');
-		game.load.image('bg', 'assets/bg.png');
-	}
-
-	function create () {
-		game.add.sprite(0,-1,'bg');
-		grid.forEach(function(el, index) {
-			var centeringx = 100;
-			var centeringy = 50;
-			var x = (index%10)*52;
-			var y = Math.floor(index/10)*48;
-			var xoffset = (Math.floor(index/10)%2)*26;
-			game.add.sprite(x+xoffset+centeringx, y+centeringy, 'spot');
-		});
-	}
-
-	function update () {
-	}
 });
 
 function hundredEverything () {
