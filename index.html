@@ -4,8 +4,11 @@
 	<link rel="shortcut icon" href="./images/favi.ico">
 	<script src="javascripts/jquery-2.1.1.min.js"></script>
 	<script src="javascripts/bootstrap.min.js"></script>
+	<script src="javascripts/CSSPlugin.min.js"></script>
+	<script src="javascripts/TweenLite.min.js"></script>
+	<script src="javascripts/TimelineLite.min.js"></script>
+	<script src="javascripts/EasePack.min.js"></script>
 	<script src="javascripts/index.js"></script>
-	<script src="javascripts/phaser.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
@@ -66,38 +69,58 @@ Kevin Jeong
 		<div class="about">
 			<div class="profileImage"></div>
 			<div class="abouttext">
-				<span class="about">About</span><br/>
+				<span class="abouttitle">About</span><br/>
 				<span class="aboutdesc">
 					Kevin Jeong is a Canadian software engineer and aspiring video game developer. 
-					Kevin is currently pursuing a Bachelors in Software Engineering at the 
-					University of Waterloo. When Kevin isn't working or studying, he can be found
-					playing board games, drawing, singing or writing.
+					As a student at the University of Waterloo, he is currently in the co-op program.
+					Kevin has contributed as an intern in various teams and companies, and has learned much both technically and professionally
+					from his experiences.
 				</span>
 			</div>
 		</div>
+		<div class="education">
+			<div class="educationtext">
+				<span class="abouttitle">
+					Education
+				</span><br/>
+				<span class="aboutdesc">
+					Kevin is studying Software Engineering at the University of Waterloo in his 3A term. He is expected to graduate August 2017.
+				</span><br/>
+			</div>
+			<div class="uw"></div>
+		</div>
 		<div id="profile" class="profile">
-			<div class="circle uw"></div>
-			<div class="circle autodesk"></div>
+			<div class="circle autodesk" style="opacity:1"></div>
 			<div class="circle ims"></div>
 			<div class="circle rbc"></div>
 			<div class="circle fleetbit"></div>
 		</div>
 		<div class="info hidden-xs">
-			<div id="uwinfo" style="display:initial">
-				<span class="title">
-					University of Waterloo
-				</span><br/>
-				<span class="subtitle">
-					Bachelor of Software Engineering - 3A
-				</span><br/>
-			</div>
-			<div id="autodeskinfo">
+			<div id="autodeskinfo" style="display:initial">
 				<span class="title">
 					Autodesk
 				</span><br/>
 				<span class="subtitle">
-					3ds Max and Cloud Software Developer
+					Software Developer 3ds Max and Cloud Services
 				</span><br/>
+				<span class="time">
+					September 2014 - December 2014
+				</span><br/>
+				<ul class="jobdesc">
+					<li>
+						Created a prototype Autodesk integrated web service for the Autodesk Labs initiative
+					</li><li>
+						Helped shape the direction by participating in the design and architecture process of the product
+					</li><li>
+						Responsible for release and demo deadline of Autodesk University 2014
+					</li><li>
+						Initial product reviews from demo and beta very positive
+					</li><li>
+						Professional HTML, CSS3, javaScript, and C++ experience
+					</li><li>
+						<b>Excellent performance evaluation</b>
+					</li>
+				</ul>
 			</div>
 			<div id="imsinfo">
 				<span class="title">
@@ -115,11 +138,11 @@ Kevin Jeong
 					</li><li>
 						Led and implemented a service-wide JavaScript charting framework decision
 					</li><li>
-						Developed and maintained Java back-end services ranging from new service functionality to data 				ingestion and processing
+						Developed and maintained Java back-end services ranging from new service functionality to data ingestion and processing
 					</li><li>
 						Dealt with big data using relational databases, SQL and HSQL
 					</li><li>
-						Outstanding performance evaluation
+						<b>Outstanding performance evaluation</b>
 					</li>
 				</ul>
 			</div>
@@ -146,7 +169,7 @@ Kevin Jeong
 						</li><li>
 							Developed ATM/Branch Locator with Augmented Reality using HTML5, CSS3, and JavaScript
 						</li><li>
-							Outstanding performance evaluation
+							<b>Outstanding performance evaluation</b>
 						</li>
 					</ul>
 				</div>
@@ -185,7 +208,7 @@ Kevin Jeong
 					</li><li>
 						Concepts used include JSON, Ruby, Android design patterns and practices, and Git
 					</li><li>
-						Excellent performance evaluation
+						<b>Excellent performance evaluation</b>
 					</li>
 				</ul>
 			</div>
@@ -194,7 +217,6 @@ Kevin Jeong
 			<span class="skills-title">
 				Skills and Experience
 			</span>
-			<div class="phaser hidden-xs" id="phaser"></div>
 		</div>
 	</div>
 </body>

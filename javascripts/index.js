@@ -1,23 +1,35 @@
 $(document).ready(function () {
-	$(window).scroll(function (evt) {
-		var opacity = 1- $(window).scrollTop()/($('#overlay-white').height());
-		hundredEverything();
-		if (opacity >= 0) {
-			$('#overlay-white').css('opacity', opacity);
-			$('#name').css('opacity', 1-opacity);
-			$('#b-t').css('width', (100-opacity * 100)+'%');
-			$('#b-b').css('width', (100-opacity * 100)+'%');
-			$('#b-r').css('height', (100-opacity * 100)+'%');
-			$('#b-l').css('height', (100-opacity * 100)+'%');
-			$('#name-center').css('top', '50%');
-		} else if ($(window).scrollTop() > $('#overlay-white').height()*1.5){
-			var goUp = ($(window).scrollTop() - ($('#overlay-white').height()*1.5))/2;
-			$('#name-center').css('top', ($(window).height()/2) - goUp);
-		} 
+	var overlay = $('#overlay-white');
+	TweenLite.set(overlay, {opacity: 0.8});
+	TweenLite.to(overlay, 1, {opacity: 0, ease: Quad.easeInOut});
+	
+	var bt = $('#b-t'),
+		bb = $('#b-b'),
+		bl = $('#b-l'),
+		br = $('#b-r'),
+		animtime = 1.5,
+		name = $('#name');
+	TweenLite.to(bt, animtime, {
+		ease: Cubic.easeInOut,
+		width: '100%'
 	});
-	$('.uw').hover(function () {
-		hover('uw', 'initial');
+	TweenLite.to(bl, animtime, {
+		ease: Cubic.easeInOut,
+		height: '100%'
 	});
+	TweenLite.to(bb, animtime, {
+		ease: Cubic.easeInOut,
+		width: '100%'
+	});
+	TweenLite.to(br, animtime, {
+		ease: Cubic.easeInOut,
+		height: '100%'
+	});
+	setTimeout(function () {
+		TweenLite.to(name, 1, {
+			opacity: 1
+		});
+	}, 1000);
 	$('.autodesk').hover(function () {
 		hover('autodesk', 'initial');
 	});
@@ -36,7 +48,6 @@ $(document).ready(function () {
 		$('#'+id+'info').css('display', type);
 	}
 	var zeroAll = function () {
-		$('.uw').css('opacity', 0.4);
 		$('.autodesk').css('opacity', 0.4);
 		$('.ims').css('opacity', 0.4);
 		$('.rbc').css('opacity', 0.4);
@@ -47,26 +58,4 @@ $(document).ready(function () {
 		$('#rbcinfo').css('display', 'none');
 		$('#fleetbitinfo').css('display', 'none');
 	}
-	
-	var game = new Phaser.Game(750, 600, Phaser.AUTO, 'phaser', { preload: preload, create: create, update: update });
-	function preload () {
-	    game.load.image('spot', 'assets/spot.png');
-	}
-
-	function create () {
-		game.add.sprite(10, 10, 'spot');
-	}
-
-	function update () {
-	}
 });
-
-function hundredEverything () {
-	$('#b-t').css('width', '100%');
-	$('#b-b').css('width', '100%');
-	$('#b-l').css('height', '100%');
-	$('#b-r').css('height', '100%');
-	$('#overlay-white').css('opacity', 0);
-	$('#name').css('opacity', 1);
-	$('#name-center').css('top', '50%');
-}
