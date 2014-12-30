@@ -9,27 +9,29 @@ $(document).ready(function () {
 		br = $('#b-r'),
 		animtime = 1.5,
 		name = $('#name');
-	TweenLite.to(bt, animtime, {
-		ease: Cubic.easeInOut,
-		width: '100%'
-	});
-	TweenLite.to(bl, animtime, {
-		ease: Cubic.easeInOut,
-		height: '100%'
-	});
-	TweenLite.to(bb, animtime, {
-		ease: Cubic.easeInOut,
-		width: '100%'
-	});
-	TweenLite.to(br, animtime, {
-		ease: Cubic.easeInOut,
-		height: '100%'
-	});
 	setTimeout(function () {
-		TweenLite.to(name, 1, {
-			opacity: 1
+		TweenLite.to(bt, animtime, {
+			ease: Cubic.easeInOut,
+			width: '100%'
 		});
-	}, 1000);
+		TweenLite.to(bl, animtime, {
+			ease: Cubic.easeInOut,
+			height: '100%'
+		});
+		TweenLite.to(bb, animtime, {
+			ease: Cubic.easeInOut,
+			width: '100%'
+		});
+		TweenLite.to(br, animtime, {
+			ease: Cubic.easeInOut,
+			height: '100%'
+		});
+		setTimeout(function () {
+			TweenLite.to(name, 1, {
+				opacity: 1
+			});
+		}, 1000);
+	}, 500);
 	$('.autodesk').hover(function () {
 		hover('autodesk', 'initial');
 	});
@@ -44,18 +46,18 @@ $(document).ready(function () {
 	});
 	var hover = function (id, type) {
 		zeroAll();
-		$('.'+id).css('opacity', 1);
+		TweenLite.to($('.'+id),0.3,{'opacity': 1});
+		TweenLite.to($('#'+id+'info'),0.1,{'opacity': 1});
 		$('#'+id+'info').css('display', type);
 	}
 	var zeroAll = function () {
-		$('.autodesk').css('opacity', 0.4);
-		$('.ims').css('opacity', 0.4);
-		$('.rbc').css('opacity', 0.4);
-		$('.fleetbit').css('opacity', 0.4);
-		$('#uwinfo').css('display', 'none');
-		$('#autodeskinfo').css('display', 'none');
-		$('#imsinfo').css('display', 'none');
-		$('#rbcinfo').css('display', 'none');
-		$('#fleetbitinfo').css('display', 'none');
+		TweenLite.to($('.autodesk'),0.3,{'opacity': 0.4});
+		TweenLite.to($('.ims'),0.3,{'opacity': 0.4});
+		TweenLite.to($('.rbc'),0.3,{'opacity': 0.4});
+		TweenLite.to($('.fleetbit'),0.3,{'opacity': 0.4});
+		TweenLite.to($('#autodeskinfo'),0.1,{'opacity': 0});
+		TweenLite.to($('#imsinfo'),0.1,{'opacity': 0});
+		TweenLite.to($('#rbcinfo'),0.1,{'opacity': 0});
+		TweenLite.to($('#fleetbitinfo'),0.1,{'opacity': 0});
 	}
 });

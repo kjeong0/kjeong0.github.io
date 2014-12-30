@@ -113,7 +113,21 @@ html,body{
 	max-width: 750px;
 	width: 100%;
 }
-
+.skill {
+	position: relative;
+	margin: auto;
+	top: 20px;
+	width: 750px;
+	text-align: center;
+	font-size: 15pt;
+}
+.skill div {
+	opacity: 0.5;
+	width: 120px;
+	text-align: center;
+	display: inline-block;
+	line-height: 27px;
+}
 .profileImage  {
 	width: 150px;
 	height: 150px;
@@ -133,6 +147,27 @@ html,body{
 }
 
 .educationtext {
+	position: absolute;
+	max-width: 600px;
+	min-width: 450px;
+	height: 200px;
+	top: 30px;
+	left: 150px;
+	padding-left: 20px;
+	width: calc(100% - 160px);
+}
+.aftertext {
+	position: absolute;
+	max-width: 600px;
+	min-width: 450px;
+	height: 200px;
+	top: 30px;
+	left: 150px;
+	padding-left: 20px;
+	width: calc(100% - 160px);
+}
+.skilltext {
+	font-size: 13pt;
 	position: absolute;
 	max-width: 600px;
 	min-width: 450px;
@@ -211,6 +246,14 @@ html,body{
 	background-size: 150px 150px;
 	background-image: url('../images/waterloo.gif');
 }
+.snowscary{
+	position: relative;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	background-size: 150px 150px;
+	background-image: url('../images/snowscary.png');
+}
 .autodesk{
 	background-image: url('../images/autodesk.png');
 }
@@ -284,7 +327,7 @@ html,body{
 	width: 58% !important;
 }
 .right{
-	top: -50px;
+	top: -80px;
 	width: 40% !important;
 }
 .after{
