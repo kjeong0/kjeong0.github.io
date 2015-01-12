@@ -28,10 +28,6 @@ html,body{
 	top: calc(100% - 40px);
 	opacity: 0.8;
 }
-@font-face {
-	font-family: milford;
-	src: url('../fonts/milf.ttf') format('truetype');
-}
 #name-center{
 	position: relative;
 	width: 100%;
@@ -58,7 +54,6 @@ html,body{
 }
 #kevin{
 	font-size: 40pt;
-	font-family: milford;
 	border-bottom: 2px solid white;
 }
 #others{
@@ -341,4 +336,7 @@ html,body{
 }
 .skills-title{
 	font-size: 22pt;
+}
+.activities{
+	margin-top: 75px;
 }
