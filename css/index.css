@@ -88,10 +88,9 @@ html,body{
 	right:0;
 }
 .under {
+	position: absolute;
 	z-index: 0;
-	height: 200%;
 	width: 100%;
-	overflow: hidden;
 }
 
 .about {
@@ -113,15 +112,11 @@ html,body{
 	margin: auto;
 	top: 20px;
 	width: 750px;
-	text-align: center;
 	font-size: 15pt;
+	padding-bottom: 50px;
 }
-.skill div {
-	opacity: 0.5;
-	width: 120px;
+.skills {
 	text-align: center;
-	display: inline-block;
-	line-height: 27px;
 }
 .profileImage  {
 	width: 150px;
@@ -140,7 +135,6 @@ html,body{
 	padding-left: 20px;
 	width: calc(100% - 160px);
 }
-
 .educationtext {
 	position: absolute;
 	max-width: 600px;
@@ -150,6 +144,21 @@ html,body{
 	left: 150px;
 	padding-left: 20px;
 	width: calc(100% - 160px);
+}
+.projecttext {
+	float: right;
+	position: relative;
+	max-width: 600px;
+	min-width: 450px;
+	top: -200px;
+	padding-left: 20px;
+	width: calc(100% - 160px);
+}
+.romeotext {
+	top: -200px;
+}
+.eventtext {
+	top: -140px;
 }
 .aftertext {
 	position: absolute;
@@ -242,12 +251,30 @@ html,body{
 	background-image: url('../images/waterloo.gif');
 }
 .snowscary{
+	margin-bottom: 40px;
 	position: relative;
 	width: 150px;
 	height: 150px;
 	border-radius: 50%;
 	background-size: 150px 150px;
 	background-image: url('../images/snowscary.png');
+}
+.romeo {
+	margin-bottom: 40px;
+	position: relative;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	background-size: 150px 150px;
+	background-image: url('../images/romeo.png');
+}
+.eventbox{
+	position: relative;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	background-size: 150px 150px;
+	background-image: url('../images/eventbox.png');
 }
 .autodesk{
 	background-image: url('../images/autodesk.png');
@@ -296,7 +323,7 @@ html,body{
 	background-attachment: fixed;
 	background-size: cover;
 	width: 100%;
-	height: 200%;
+	height: 100%;
 	position: absolute;
 }
 .bg-picture .side-block{
@@ -330,7 +357,6 @@ html,body{
 	position: relative;
 	display: block;
 	width: 750px;
-	height: 100px;
 	margin: auto;
 	font-size: 30pt;
 }

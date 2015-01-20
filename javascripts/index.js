@@ -45,26 +45,30 @@ $(document).ready(function () {
 		hover('fleetbit', 'initial');
 	});
 	var hover = function (id, type) {
-		console.log($('#' + id + 'info').css('display'));
-		if ($('#' + id + 'info').css('display') === 'none'){
+		var infoel = $('#' + id + 'info');
+		if (infoel.css('display') === 'none'){
 			zeroAll();
 			TweenLite.to($('.'+id),0.3,{'opacity': 1});
-			TweenLite.to($('#'+id+'info'),0.2,{'opacity': 1});
-			$('#'+id+'info').css('display', type);
+			TweenLite.to(infoel,0.2,{'opacity': 1});
+			infoel.css('display', type);
 		}
-	}
+	};
 	var zeroAll = function () {
+		var adel = $('#autodeskinfo');
+		var iel = $('#imsinfo');
+		var rel = $('#rbcinfo');
+		var fbel = $('#fleetbitinfo');
 		TweenLite.to($('.autodesk'),0.3,{'opacity': 0.4});
 		TweenLite.to($('.ims'),0.3,{'opacity': 0.4});
 		TweenLite.to($('.rbc'),0.3,{'opacity': 0.4});
 		TweenLite.to($('.fleetbit'),0.3,{'opacity': 0.4});
-		TweenLite.to($('#autodeskinfo'),0.2,{'opacity': 0});
-		TweenLite.to($('#imsinfo'),0.2,{'opacity': 0});
-		TweenLite.to($('#rbcinfo'),0.2,{'opacity': 0});
-		TweenLite.to($('#fleetbitinfo'),0.2,{'opacity': 0});
-		$('#autodeskinfo').css('display', 'none');
-		$('#imsinfo').css('display', 'none');
-		$('#rbcinfo').css('display', 'none');
-		$('#fleetbitinfo').css('display', 'none');
-	}
+		TweenLite.to(adel,0.2,{'opacity': 0});
+		TweenLite.to(iel,0.2,{'opacity': 0});
+		TweenLite.to(rel,0.2,{'opacity': 0});
+		TweenLite.to(fbel,0.2,{'opacity': 0});
+		adel.css('display', 'none');
+		iel.css('display', 'none');
+		rel.css('display', 'none');
+		fbel.css('display', 'none');
+	};
 });
