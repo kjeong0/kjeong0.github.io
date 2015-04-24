@@ -1,5 +1,9 @@
 $(document).ready(function () {
-	setTimeout(function () {
+
+});
+
+$(window).load(function () {
+		setTimeout(function () {
 		$('#loading').css('opacity', 0);
 	}, 200);
 	setTimeout(function () {
