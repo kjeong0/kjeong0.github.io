@@ -3,7 +3,22 @@ $(document).ready(function () {
 });
 
 $(window).load(function () {
-		setTimeout(function () {
+	var height = $(window).height();
+	var scrollTop = $(window).scrollTop();
+	var calc = scrollTop/height;
+		
+	if (height < scrollTop) {
+		$('.header').css('opacity', 1);
+	} else if (calc < 1){
+		if (calc >= 0.6){
+			calc -= 0.6;
+			calc /= 0.4;
+			$('#parallax_cover').css('opacity', calc);
+			$('.header').css('opacity', calc);
+		}
+	}
+
+	setTimeout(function () {
 		$('#loading').css('opacity', 0);
 	}, 200);
 	setTimeout(function () {
