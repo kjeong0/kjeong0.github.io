@@ -19,9 +19,25 @@ $(window).load(function () {
 				calc -= 0.6;
 				calc /= 0.4;
 				$('#parallax_cover').css('opacity', calc);
+				$('.header').css('opacity', calc);
 				return;
 			}
 		}
+		if (scrollTop < height){
+			$('.header').css('opacity', 0);
+		}
 		$('#parallax_cover').css('opacity', 0);
-	})
+	});
+
+	$( '.work' ).click (function () {
+		console.log(jQuery.data(this, "open"));
+		if (jQuery.data(this, "open") != "true") {
+			TweenLite.set($(this), {height: 'auto'});
+			TweenLite.from($(this), 1, {height: '40'});
+			jQuery.data(this, "open", "true");
+		} else {
+			TweenLite.to($(this), 1, {height: '40'});
+			jQuery.data(this, "open", "false");
+		}
+	});
 });
