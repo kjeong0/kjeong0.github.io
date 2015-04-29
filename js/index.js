@@ -48,10 +48,10 @@ $(window).load(function () {
 		console.log(jQuery.data(this, "open"));
 		if (jQuery.data(this, "open") != "true") {
 			TweenLite.set($(this), {height: 'auto'});
-			TweenLite.from($(this), 1, {height: '40'});
+			TweenLite.from($(this), 1, {height: '28'});
 			jQuery.data(this, "open", "true");
 		} else {
-			TweenLite.to($(this), 1, {height: '40'});
+			TweenLite.to($(this), 1, {height: '28'});
 			jQuery.data(this, "open", "false");
 		}
 	});
