@@ -6,7 +6,7 @@ $(window).load(function () {
 	var height = $(window).height();
 	var scrollTop = $(window).scrollTop();
 	var calc = scrollTop/height;
-		
+
 	if (height < scrollTop) {
 		$('.header').css('opacity', 1);
 	} else if (calc < 1){
@@ -45,13 +45,12 @@ $(window).load(function () {
 	});
 
 	$( '.work' ).click (function () {
-		console.log(jQuery.data(this, "open"));
 		if (jQuery.data(this, "open") != "true") {
 			TweenLite.set($(this), {height: 'auto'});
-			TweenLite.from($(this), 1, {height: '28'});
+			TweenLite.from($(this), 1, {height: '28', ease: Quart.easeInOut});
 			jQuery.data(this, "open", "true");
 		} else {
-			TweenLite.to($(this), 1, {height: '28'});
+			TweenLite.to($(this), 1, {height: '28', ease: Quart.easeInOut});
 			jQuery.data(this, "open", "false");
 		}
 	});
