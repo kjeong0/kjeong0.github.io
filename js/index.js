@@ -9,6 +9,7 @@ $(window).load(function () {
 
 	if (height < scrollTop) {
 		$('.header').css('opacity', 1);
+		$('#profile_cover').css('opacity', 1-calc);
 	} else if (calc < 1){
 		if (calc >= 0.6){
 			calc -= 0.6;
@@ -34,6 +35,7 @@ $(window).load(function () {
 				calc -= 0.6;
 				calc /= 0.4;
 				$('#parallax_cover').css('opacity', calc);
+				$('#profile_cover').css('opacity', 1-calc);
 				$('.header').css('opacity', calc);
 				return;
 			}
