@@ -37,7 +37,7 @@ $(window).load(function () {
 				calc /= 0.4;
 				$('#parallax_cover').css('opacity', calc);
 				$('#profile_cover').css('opacity', 1-calc);
-				$('#profile_text').css('opacity', calc * 0.8);
+				$('#profile_text').css('opacity', calc * 0.8+0.05);
 
 				$('.header').css('opacity', calc);
 				return;
