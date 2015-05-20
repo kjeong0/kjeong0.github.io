@@ -98,7 +98,7 @@ body {
 	height: 300px;
 	min-width: 300px;
 	position: relative;
-	border-top: 12px solid rgb(10,10,10);
+	border-top: 9px solid rgb(10,10,10);
 }
 	#profile_cover {
 		position: absolute;
