@@ -15,6 +15,7 @@ $(window).load(function () {
 			calc -= 0.6;
 			calc /= 0.4;
 			$('#parallax_cover').css('opacity', calc);
+			$('#profile_text').css('opacity', calc * 0.7);
 			$('.header').css('opacity', calc);
 		}
 	}
@@ -36,12 +37,15 @@ $(window).load(function () {
 				calc /= 0.4;
 				$('#parallax_cover').css('opacity', calc);
 				$('#profile_cover').css('opacity', 1-calc);
+				$('#profile_text').css('opacity', calc * 0.8);
+
 				$('.header').css('opacity', calc);
 				return;
 			}
 		}
 		if (scrollTop < height){
 			$('.header').css('opacity', 0);
+			$('#profile_text').css('opacity', 0.05);
 		}
 		$('#parallax_cover').css('opacity', 0);
 	});
