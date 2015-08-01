@@ -153,12 +153,16 @@ body {
 			background-size: cover;
 		}
 		.fade_right {
+			-moz-transform: scaleX(-1);
+		    -o-transform: scaleX(-1);
+		    -webkit-transform: scaleX(-1);
+		    transform: scaleX(-1);
 			position: absolute;
 			width: 50%;
 			right: 0;
 			height: 100%;
 			z-index: 0;
-			background-image: url(../assets/profile_fade_right.png);
+			background-image: url(../assets/profile_fade_left.png);
 			background-size: cover;
 		}
 	}
