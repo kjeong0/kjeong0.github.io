@@ -26,7 +26,7 @@ body {
 			opacity: 1 !important;
 		}
 	}
-	.header div {
+	.header .header_name {
 		font-family: 'accidental_presidency';
 		font-size: 16pt;
 		position: absolute;
@@ -73,6 +73,7 @@ body {
 	background-size: cover;
 	background-image: url('../assets/parallax.png');
 	background-position: center;
+	position: absolute;
 }
 
 	.title_card {
@@ -92,8 +93,24 @@ body {
 	.name {
 		font-size: 70pt;
 	}
+	.cloud {
+		background-size: cover;
+		position: absolute;
+		z-index: 1;
+		opacity: 0.3;
+	}
+
+#clouds {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	max-width: 100%;
+	position: relative;
+}
 
 .profile {
+	top: -5px;
 	width: 100%;
 	height: 300px;
 	min-width: 300px;
@@ -113,14 +130,37 @@ body {
 		background-size: auto 100%;
 		background-position: center;
 		background-repeat: no-repeat;
+		z-index: 1;
 	}
-
 	.background {
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		top: 0;
 		background-image: url(../assets/profile_repeat.png);
+	}
+	@media(min-width: 1200px){
+		.background {
+			opacity: 0.5;
+		}
+	}
+	@media(min-width: 1200px){
+		.fade_left {
+			position: absolute;
+			width: 50%;
+			height: 100%;
+			background-image: url(../assets/profile_fade_left.png);
+			background-size: cover;
+		}
+		.fade_right {
+			position: absolute;
+			width: 50%;
+			right: 0;
+			height: 100%;
+			z-index: 0;
+			background-image: url(../assets/profile_fade_right.png);
+			background-size: cover;
+		}
 	}
 
 .content {
