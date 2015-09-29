@@ -209,7 +209,6 @@ body {
 		font-size: 14pt;
 	}
 		.text a {
-			color: black !important;
 			text-decoration: none;
 		}
 		.text a:hover {
@@ -229,6 +228,9 @@ body {
 	}
 		.waterloo {
 			background-image: url('../assets/waterloo.png');
+		}
+		.de {
+			background-image: url('../assets/de.png');
 		}
 		.autodesk {
 			background-image: url('../assets/autodesk.png');
@@ -251,3 +253,26 @@ body {
 		margin-top: 100px;
 		height: 50px;
 	}
+
+/*#game_grid {
+	position: absolute;
+	left: 50%;
+	margin-left: -160px;
+	margin-top: 20px;
+}
+	.row {
+
+	}
+	.cell {
+		float: left;
+		height: 40px;
+		width: 40px;
+		border: 1px solid black;
+	}
+	.wall {
+		background-color: black;
+	}
+	.robot {
+		background-image: url('../assets/robot.png');
+		background-size: contain;
+	}*/

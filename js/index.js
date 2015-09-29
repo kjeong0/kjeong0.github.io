@@ -8,6 +8,7 @@ $(window).load(function () {
 
 	createCloud();
 	cloudRecursion();
+	populateSkillHovers();
 
 	if (height < scrollTop) {
 		$('.header').css('opacity', 1);
@@ -58,6 +59,8 @@ $(window).load(function () {
 			jQuery.data(this, "open", "false");
 		}
 	});
+
+	gameLogic()
 });
 
 function cloudRecursion () {
@@ -109,3 +112,251 @@ function createCloud () {
 function removeCloud (cloud) {
 	cloud.remove();
 }
+
+function populateSkillHovers () {
+	var skillMappings = {
+		'cpp' : ['work_ims', 'work_rbc', 'work_fleetbit'],
+		'lua' : ['work_autodesk', 'work_ims', 'work_rbc', 'work_fleetbit'],
+		'js'  : ['work_de'],
+		'css' : ['work_de'],
+		'html': ['work_de'],
+		'java': ['work_autodesk', 'work_de']
+	};
+
+	for (var skill in skillMappings) {
+		$('#'+skill).hover(function(){
+			for(var work in skillMappings[this.id]){
+				$('#'+skillMappings[this.id][work]).css({opacity: 0.4});
+			}
+		},function(){
+			for(var work in skillMappings[this.id]){
+				$('#'+skillMappings[this.id][work]).css({opacity: 1});
+			}
+		});
+	}
+}
+
+//--------------------------- MAZE GAME ------------------------------
+
+/*var display_instruction_set = function(instruction_set){
+	for (var i = 0; i < instruction_set.length; i++){
+		var instructionDiv = document.createElement('div')
+		var instruction = instruction_set[i]
+		if (instruction.negate) {
+			instructionDiv.innerHTML = "not "
+		}
+		instructionDiv.innerHTML += instruction.condition.id + " | " + instruction.behaviour.id
+		$('#instruction_set').append(instructionDiv)
+	}
+}
+
+var render_game = function(game_state){
+	//Garbaggio code plz fix
+	$('#game_grid').empty();
+	for (var i = 0; i < 9; i++){
+		var row = document.createElement('div');
+		row.className = 'row';
+		for (var k = 0; k < 9; k++){
+			var cell = document.createElement('div');
+			if (i == game_state.curr_pos.x && k == game_state.curr_pos.y) {
+				cell.className = "cell robot";
+				var dX = game_state.curr_pos.dir[1]
+				var dY = game_state.curr_pos.dir[0]
+
+				var degree = 90 * (dX ? 2 + dX : dX)
+				degree += 90 * (dY ? 1 - dY : dY)
+				$(cell).css({ 'transform': 'rotate(' + degree + 'deg)'})
+			} else {
+				cell.className = "cell"
+				if (game_state.map[i][k] != 0){
+					cell.className += " wall"
+				}
+			}
+			$(row).append(cell)
+		}
+		$('#game_grid').append(row)
+	}
+}
+
+var game_loop = function (instruction_set, game_state){
+	for (var i = 0; i < instruction_set.length; i ++){
+		var instruction = instruction_set[i];
+		if (instruction.condition.evaluate(game_state) == !instruction.negate){
+			console.log(instruction.condition.id, instruction.behaviour.id)
+			instruction.behaviour.apply(game_state);
+			break;
+		}
+	}
+
+	render_game(game_state);
+
+	setTimeout(function(){game_loop(instruction_set, game_state)}, 1000);
+}
+
+var define_behaviours = function (){
+	// please kill me
+	var potential_behaviours = ['go_forward', 'turn_left', 'turn_right', 'turn_around']
+
+	var behaviour_list = [
+		{
+			id: 'go_forward',
+			apply: function(game_state){
+				var xp = game_state.curr_pos.x + game_state.curr_pos.dir[0]
+				var yp = game_state.curr_pos.y + game_state.curr_pos.dir[1]
+
+				if(xp < 9 && yp < 9 && xp >= 0 && yp >= 0)
+				{
+					if(game_state.map[xp][yp] == 0){
+						game_state.curr_pos.x = xp
+						game_state.curr_pos.y = yp
+					}
+				}
+			}
+		},
+		{
+			id: 'turn_left',
+			apply: function(game_state){
+				var dX = game_state.curr_pos.dir[0]
+				var dY = game_state.curr_pos.dir[1]
+				dY = -dY
+				game_state.curr_pos.dir[0] = dY
+				game_state.curr_pos.dir[1] = dX
+			}
+		},
+		{
+			id: 'turn_right',
+			apply: function(game_state){
+				var dX = game_state.curr_pos.dir[0]
+				var dY = game_state.curr_pos.dir[1]
+				dX = -dX
+				game_state.curr_pos.dir[0] = dY
+				game_state.curr_pos.dir[1] = dX
+			}
+		},
+		{
+			id: 'turn_around', // bright eyes
+			apply: function(game_state){
+				game_state.curr_pos.dir[0] *= -1
+				game_state.curr_pos.dir[1] *= -1
+			}
+		}
+	]
+
+	return behaviour_list
+}
+
+var define_conditions = function () {
+	var potential_conditions = ['front', 'back', 'left', 'right', 'free']
+
+	var condition_list = [
+		{
+			id: 'front',
+			evaluate: function(game_state) {
+				var xp = game_state.curr_pos.x + game_state.curr_pos.dir[0]
+				var yp = game_state.curr_pos.y + game_state.curr_pos.dir[1]
+
+				if(xp < 9 && yp < 9 && xp >= 0 && yp >= 0)
+				{
+					if(game_state.map[xp][yp] == 0){
+						return false
+					}
+				}
+				return true
+			}
+		},
+		{
+			id: 'back',
+			evaluate: function(game_state) {
+				var xp = game_state.curr_pos.x - game_state.curr_pos.dir[0]
+				var yp = game_state.curr_pos.y - game_state.curr_pos.dir[1]
+
+				if(xp < 9 && yp < 9 && xp >= 0 && yp >= 0)
+				{
+					if(game_state.map[xp][yp] == 0){
+						return false
+					}
+				}
+				return true
+			}
+		},
+		{
+			id: 'left',
+			evaluate: function(game_state) {
+				var xp = game_state.curr_pos.x + game_state.curr_pos.dir[1]
+				var yp = game_state.curr_pos.y - game_state.curr_pos.dir[0]
+
+				if(xp < 9 && yp < 9 && xp >= 0 && yp >= 0)
+				{
+					if(game_state.map[xp][yp] == 0){
+						return false
+					}
+				}
+				return true
+			}
+		},
+		{
+			id: 'right',
+			evaluate: function(game_state) {
+				var xp = game_state.curr_pos.x - game_state.curr_pos.dir[1]
+				var yp = game_state.curr_pos.y + game_state.curr_pos.dir[0]
+
+				if(xp < 9 && yp < 9 && xp >= 0 && yp >= 0)
+				{
+					if(game_state.map[xp][yp] == 0){
+						return false
+					}
+				}
+				return true
+			}
+		}
+	]
+
+	return condition_list
+}
+
+function gameLogic () {
+	// beat kevin at AI and text or snapchat me your score and be the new leader!
+	var instruction = {
+		condition: '', //id, evaluate(game_state)
+		behaviour: '' //id, apply(game_state)
+	}
+
+	var behaviour_list = define_behaviours();
+	var condition_list = define_conditions();
+
+	var instruction_set = [{
+		negate: true,
+		condition: condition_list[0],
+		behaviour: behaviour_list[0]
+	},
+	{
+		negate: false,
+		condition: condition_list[0],
+		behaviour: behaviour_list[2]
+	}]
+
+	//DEVELOP, CREATE AND DESIGN A PUZZLE GAME FOR MY RESUME AND WORK EXPERIENCE
+	var game_state = {
+		map : new Array(9),
+		curr_pos: {x: 0, y: 0, dir: [0,1]}
+	};
+
+	for (var i = 0; i < 9; i++){
+		game_state.map[i] = new Array (9)
+		for (var k = 0; k < 9; k ++){
+			game_state.map[i][k] = 0;
+		}
+	}
+
+	for (var k = 0; k < 25; k++){
+		var xSeed = Math.random()
+		var ySeed = Math.random()
+
+		var x = Math.floor(xSeed*9)
+		var y = Math.floor(ySeed*9)
+		game_state.map[x][y] = 1
+	}
+
+	display_instruction_set(instruction_set);
+	game_loop(instruction_set, game_state);
+}*/
