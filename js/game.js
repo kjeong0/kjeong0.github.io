@@ -114,6 +114,7 @@ function gameSetup() {
 function endGame() {
 	gameArea.end()
 	done = true
+	alert("Game Over!")
 }
 
 function powerUp(width, height, color, x, y, type) {
