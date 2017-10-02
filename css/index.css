@@ -94,6 +94,16 @@ body {
 	.name {
 		font-size: 70pt;
 	}
+	.logo_card {
+		position: relative;
+		background-size: cover;
+		background-image: url('../assets/logos.png');
+		background-position: center;
+		height: 55px;
+		width: 220px;
+		margin: auto;
+		margin-top: 13px;
+	}
 	.cloud {
 		background-size: cover;
 		position: absolute;
