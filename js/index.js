@@ -128,11 +128,11 @@ function removeCloud (cloud) {
 function populateSkillHovers () {
 	var skillMappings = {
 		'cpp' : ['work_ims', 'work_rbc', 'work_fleetbit'],
-		'lua' : ['work_autodesk', 'work_ims', 'work_rbc', 'work_fleetbit', 'work_amazon'],
-		'js'  : ['work_de', 'work_amazon'],
-		'css' : ['work_de', 'work_amazon'],
-		'html': ['work_de', 'work_amazon'],
-		'java': ['work_autodesk', 'work_de', 'work_amazon']
+		'lua' : ['work_autodesk', 'work_ims', 'work_rbc', 'work_fleetbit', 'work_amazon', 'work_ubisoft'],
+		'js'  : ['work_de', 'work_amazon', 'work_ubisoft'],
+		'css' : ['work_de', 'work_amazon', 'work_ubisoft'],
+		'html': ['work_de', 'work_amazon', 'work_ubisoft'],
+		'java': ['work_autodesk', 'work_de', 'work_amazon', 'work_ubisoft']
 	};
 
 	for (var skill in skillMappings) {

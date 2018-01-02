@@ -114,7 +114,7 @@ function gameSetup() {
 function endGame() {
 	gameArea.end()
 	done = true
-	alert("Game Over!")
+	alert("Game Over! Score : " + score)
 }
 
 function powerUp(width, height, color, x, y, type) {
@@ -167,7 +167,8 @@ function snakeBody(width, height, color, x, y, type, lifeTime) {
         }
     }
     this.collided = function() {
-    	endGame()
+        if (!done)
+    	   endGame()
     }
 }
 
